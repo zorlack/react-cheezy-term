@@ -1,0 +1,25 @@
+{
+  "name": "react-cheezy-term",
+  "version": "1.0.0",
+  "main": "dist/react-cheezy-term.umd.js",
+  "module": "dist/react-cheezy-term.es.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build:bundle": "vite build",
+    "build:types": "tsc --project tsconfig.json --emitDeclarationOnly --declaration --declarationDir dist --outDir dist",
+    "build": "yarn build:bundle && yarn build:types"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.7"
+  }
+}
