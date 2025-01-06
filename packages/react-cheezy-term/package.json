@@ -4,6 +4,7 @@
   "main": "dist/react-cheezy-term.umd.js",
   "module": "dist/react-cheezy-term.es.js",
   "types": "dist/index.d.ts",
+  "license":"MIT",
   "scripts": {
     "build:bundle": "vite build",
     "build:types": "tsc --project tsconfig.json --emitDeclarationOnly --declaration --declarationDir dist --outDir dist",

@@ -1,4 +1,3 @@
-import React from 'react';
 import { CheezyTerm } from 'react-cheezy-term';
 
 function App() {
