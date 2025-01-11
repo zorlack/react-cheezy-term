@@ -7,7 +7,8 @@
   "module": "dist/react-cheezy-term.esm.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "src/assets/images"
   ],
   "scripts": {
     "dev": "vite",
