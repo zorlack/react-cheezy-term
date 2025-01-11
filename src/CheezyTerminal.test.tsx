@@ -1,10 +1,15 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen, waitFor } from '@testing-library/react';
-import CheezyTerminal from '../src/CheezyTerminal';
+import { CheezyTerminal, consoleProfiles } from '../src/index';
 
 describe('CheezyTerminal', () => {
   it('renders images (via import.meta.glob) when triggered', async () => {
-    render(<CheezyTerminal />);
+    render(<CheezyTerminal
+      consoleConfig={consoleProfiles.spaceconsole}
+      onTerminalCreated={(term) => {
+        term.write('Hello from the space console!\r\n');
+      }}
+    />);
 
     // Option 1: Using waitFor
     await waitFor(() => {

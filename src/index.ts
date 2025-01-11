@@ -1,1 +1,1 @@
-export { default as CheezyTerminal } from './CheezyTerminal';
+export { default as CheezyTerminal, consoleProfiles } from './CheezyTerminal';
