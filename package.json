@@ -1,6 +1,6 @@
 {
   "name": "react-cheezy-term",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "main": "dist/react-cheezy-term.cjs.js",
