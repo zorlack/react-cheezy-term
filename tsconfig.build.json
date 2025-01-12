@@ -34,6 +34,11 @@
       // Often used in library builds to skip checking .d.ts in node_modules
       "skipLibCheck": true
     },
-    "include": ["src"]
+    "include": ["src"],
+    "exclude": [
+      "**/*.test.*", // or "**/*.spec.*"
+      "**/__tests__/**", 
+      "**/demo.tsx"
+    ]
   }
   
