@@ -5,6 +5,7 @@ import * as path from 'path';
 export default defineConfig({
   plugins: [react()],
   build: {
+    emptyOutDir: false,
     assetsInlineLimit: 0,
     lib: {
       entry: path.resolve('src/index.ts'),

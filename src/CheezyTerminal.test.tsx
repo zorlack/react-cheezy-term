@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react';
+import { Terminal } from '@xterm/xterm';
 import { describe, it, expect } from 'vitest';
 import { CheezyTerminal, consoleProfiles } from '../src/index';
 
@@ -7,7 +8,7 @@ describe('CheezyTerminal', () => {
     render(
       <CheezyTerminal
         consoleConfig={consoleProfiles.spaceconsole}
-        onTerminalCreated={(term) => {
+        onTerminalCreated={(term : Terminal) => {
           term.write('Hello from the space console!\r\n');
         }}
       />

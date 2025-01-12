@@ -1,0 +1,39 @@
+// tsconfig.build.json
+{
+    "compilerOptions": {
+      // Where output .js/.d.ts files go:
+      "outDir": "dist",
+  
+      // Root folder for your source code (adjust to your actual structure):
+      "rootDir": "src",
+  
+      // Enable .d.ts output
+      "declaration": true,
+      "declarationMap": true,
+      "declarationDir": "dist/types",
+      "noEmit": false,
+  
+      // Basic TS settings
+      "target": "ES2020",
+      "module": "ESNext",
+      "moduleResolution": "node",
+      "lib": ["DOM", "ESNext"],
+  
+      // Strictness settings
+      "strict": true,
+      // Helps with default imports from CJS modules like React
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+  
+      // Required to import .json files
+      "resolveJsonModule": true,
+  
+      // Use React 18's new JSX transform
+      "jsx": "react-jsx",
+  
+      // Often used in library builds to skip checking .d.ts in node_modules
+      "skipLibCheck": true
+    },
+    "include": ["src"]
+  }
+  

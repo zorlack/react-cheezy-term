@@ -20,7 +20,7 @@
   "type": "module",
   "main": "dist/react-cheezy-term.cjs.js",
   "module": "dist/react-cheezy-term.esm.js",
-  "types": "dist/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/react-cheezy-term.esm.js",
@@ -33,7 +33,7 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -p tsconfig.build.json && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest"
