@@ -18,14 +18,14 @@
   "homepage": "https://github.com/zorlack/react-cheezy-term#readme",
   "private": false,
   "type": "module",
-  "main": "dist/react-cheezy-term.cjs.js",
-  "module": "dist/react-cheezy-term.esm.js",
+  "main": "dist/react-cheezy-term.umd.js",
+  "module": "dist/react-cheezy-term.es.js",
   "types": "dist/types/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
-      "import": "./dist/react-cheezy-term.esm.js",
-      "require": "./dist/react-cheezy-term.cjs.js"
+      "import": "./dist/react-cheezy-term.es.js",
+      "require": "./dist/react-cheezy-term.umd.js"
     }
   },
   "files": [
