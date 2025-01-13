@@ -1,0 +1,100 @@
+{
+    "spaceconsole": {
+      "imagePath": "spaceconsole.png",
+      "wrapperWidth": 1216,
+      "wrapperHeight": 832,
+      "startX": 359,
+      "startY": 209,
+      "consoleWidth": 482,
+      "consoleHeight": 382,
+      "xtermTheme": {
+        "background": "#000000",
+        "foreground": "#e8b338",
+        "cursor": "#e8b338"
+      }
+    },
+    "rectoset": {
+      "imagePath": "rectoset.png",
+      "wrapperWidth": 1216,
+      "wrapperHeight": 832,
+      "startX": 283,
+      "startY": 200,
+      "consoleWidth": 463,
+      "consoleHeight": 370,      
+      "xtermTheme": {
+        "background": "#000000",
+        "foreground": "#0aff0a",
+        "cursor": "#00ff00"
+      }
+    },
+    "lunchbox": {
+      "imagePath": "lunchbox.png",
+      "wrapperWidth": 1216,
+      "wrapperHeight": 832,
+      "startX": 361,
+      "startY": 241,
+      "consoleWidth": 511,
+      "consoleHeight": 369,      
+      "xtermTheme": {
+        "background": "#000000",
+        "foreground": "#0aff0a",
+        "cursor": "#00ff00"
+      }
+    },
+    "bananaterm": {
+      "imagePath": "bananaterm.png",
+      "wrapperWidth": 1216,
+      "wrapperHeight": 832,
+      "startX": 263,
+      "startY": 195,
+      "consoleWidth": 521,
+      "consoleHeight": 349,      
+      "xtermTheme": {
+        "background": "#000000",
+        "foreground": "#0aff0a",
+        "cursor": "#00ff00"
+      }
+    },
+    "plastitop": {
+      "imagePath": "plastitop.png",
+      "wrapperWidth": 1216,
+      "wrapperHeight": 832,
+      "startX": 302,
+      "startY": 159,
+      "consoleWidth": 526,
+      "consoleHeight": 322,      
+      "xtermTheme": {
+        "background": "#000000",
+        "foreground": "#0aff0a",
+        "cursor": "#00ff00"
+      }
+    },
+    "grayset": {
+      "imagePath": "grayset.png",
+      "wrapperWidth": 1216,
+      "wrapperHeight": 832,
+      "startX": 337,
+      "startY": 200,
+      "consoleWidth": 481,
+      "consoleHeight": 377,      
+      "xtermTheme": {
+        "background": "#000000",
+        "foreground": "#0aff0a",
+        "cursor": "#00ff00"
+      }
+    },
+    "cube": {
+      "imagePath": "cube.png",
+      "wrapperWidth": 1216,
+      "wrapperHeight": 832,
+      "startX": 358,
+      "startY": 207,
+      "consoleWidth": 490,
+      "consoleHeight": 370,      
+      "xtermTheme": {
+        "background": "#000000",
+        "foreground": "#0aff0a",
+        "cursor": "#00ff00"
+      }
+    }
+}
