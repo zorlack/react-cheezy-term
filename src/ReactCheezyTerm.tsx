@@ -4,8 +4,9 @@ import React, {
     useImperativeHandle,
     useRef
   } from 'react';
-import { Terminal } from '@xterm/xterm'; // Adjust if using 'xterm' instead.
-
+import { Terminal } from '@xterm/xterm';
+import { FitAddon } from '@xterm/addon-fit';
+import '@xterm/xterm/css/xterm.css';  
 export interface XtermTheme {
   background: string;
   foreground: string;
@@ -46,28 +47,46 @@ export const ReactCheezyTerm = forwardRef<ReactCheezyTermRef, ReactCheezyTermPro
   
       const xtermContainerRef = useRef<HTMLDivElement>(null);
       const xtermRef = useRef<Terminal | null>(null);
+      const fitAddonRef = useRef<FitAddon | null>(null);
   
       // Expose `getTerminal()` via the ref
       useImperativeHandle(ref, () => ({
         getTerminal: () => xtermRef.current
       }));
+
+      const defaultTheme = {
+        background: '#000000',
+        foreground: '#00ff00',
+        cursor: '#00ff00'
+      };
+    
+      const mergedTerminalConfig = terminalConfig
+        ? { ...defaultTheme, ...terminalConfig }
+        : defaultTheme;
+
   
       useEffect(() => {
         const terminal = new Terminal({
-          theme: {
-            background: xtermTheme.background,
-            foreground: xtermTheme.foreground,
-            cursor: xtermTheme.cursor
-          }
-          // Add any other xterm options as needed
+          theme: mergedTerminalConfig
         });
+
+        const fitAddon = new FitAddon();
+        fitAddonRef.current = fitAddon;
+        terminal.loadAddon(fitAddon);
+
   
         xtermRef.current = terminal;
   
         // Open the terminal in the container
         if (xtermContainerRef.current) {
           terminal.open(xtermContainerRef.current);
+          // Fit the terminal to the container
+          fitAddon.fit();
         }
+
+        // Refit terminal when the window resizes
+        const handleResize = () => fitAddon.fit();
+        window.addEventListener('resize', handleResize);
   
         // Cleanup on unmount
         return () => {
@@ -91,6 +110,7 @@ export const ReactCheezyTerm = forwardRef<ReactCheezyTermRef, ReactCheezyTermPro
         top: `${startY}px`,
         width: `${consoleWidth}px`,
         height: `${consoleHeight}px`,
+        backgroundColor: 'black',
         overflow: 'hidden'
       };
   

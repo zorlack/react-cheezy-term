@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { ReactCheezyTerm, ReactCheezyTermRef } from './ReactCheezyTerm';
+import "./App.css";
 
 const config = {
   imagePath: 'react-cheezy-term/rectoset.png',
@@ -19,6 +20,7 @@ const config = {
 export default function App() {
   // Create a ref to the ReactCheezyTerm
   const cheezyRef = useRef<ReactCheezyTermRef>(null);
+  const cheezyRefb = useRef<ReactCheezyTermRef>(null);
 
   useEffect(() => {
     // When the component has mounted, we can access the Terminal
@@ -27,12 +29,19 @@ export default function App() {
       // Write something silly to the terminal
       terminal.write('Welcome to the Cheezy Terminal!\r\n');
     }
+
+    const terminalb = cheezyRefb.current?.getTerminal();
+    if (terminalb) {
+      // Write something silly to the terminal
+      terminalb.write('This is stupid...!\r\n');
+    }
   }, []);
 
   return (
     <div>
       <h1>Cheezy Terminal Example</h1>
       <ReactCheezyTerm ref={cheezyRef} terminalConfig={config} />
+      <ReactCheezyTerm ref={cheezyRefb} terminalConfig={config} />
     </div>
   );
 }
