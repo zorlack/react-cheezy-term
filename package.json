@@ -26,6 +26,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "vite",
+    "build-ts": "tsc -b",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
