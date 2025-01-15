@@ -1,9 +1,13 @@
 {
   "name": "react-cheezy-term",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "A tongue-in-cheek computer terminal packaged as a UI component for React",
   "author": "zorlack",
-  "keywords": ["react", "terminal", "ui"], 
+  "keywords": [
+    "react",
+    "terminal",
+    "ui"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zorlack/react-cheezy-term.git"
@@ -11,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/zorlack/react-cheezy-term/issues"
   },
-  "homepage": "https://github.com/zorlack/react-cheezy-term#readme",  
+  "homepage": "https://github.com/zorlack/react-cheezy-term#readme",
   "type": "module",
   "main": "dist/main.js",
   "types": "dist/main.d.ts",
