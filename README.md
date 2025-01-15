@@ -13,7 +13,7 @@ npm install react-cheezy-term
 
 Next, visit the [releases](https://github.com/zorlack/react-cheezy-term/releases/) page and find the latest release. Then download the latest `.media.` release.
 
-Look for a filename like: `react-cheezy-term.media.{version}.tar.gz`
+Look for a filename like: `react-cheezy-term-media-0.0.0.tar.gz`
 
 Extract this file inside your application's `/public` directory so that you have a path structure like this:
 
