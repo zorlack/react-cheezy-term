@@ -7,6 +7,7 @@ import React, {
 import { Terminal } from '@xterm/xterm';
 import { FitAddon } from '@xterm/addon-fit';
 import '@xterm/xterm/css/xterm.css';  
+import _styles from './styles.module.css'
 export interface XtermTheme {
   background: string;
   foreground: string;
