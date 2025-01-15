@@ -7,6 +7,8 @@
       "startY": 209,
       "consoleWidth": 482,
       "consoleHeight": 382,
+      "fontSize": 12,
+      "cursorBlink": true,
       "xtermTheme": {
         "background": "#000000",
         "foreground": "#e8b338",
@@ -21,6 +23,8 @@
       "startY": 200,
       "consoleWidth": 463,
       "consoleHeight": 370,      
+      "fontSize": 12,
+      "cursorBlink": true,
       "xtermTheme": {
         "background": "#000000",
         "foreground": "#0aff0a",
@@ -35,6 +39,8 @@
       "startY": 241,
       "consoleWidth": 511,
       "consoleHeight": 369,      
+      "fontSize": 12,
+      "cursorBlink": true,
       "xtermTheme": {
         "background": "#000000",
         "foreground": "#0aff0a",
@@ -49,6 +55,8 @@
       "startY": 195,
       "consoleWidth": 521,
       "consoleHeight": 349,      
+      "fontSize": 12,
+      "cursorBlink": true,
       "xtermTheme": {
         "background": "#000000",
         "foreground": "#0aff0a",
@@ -63,6 +71,8 @@
       "startY": 159,
       "consoleWidth": 526,
       "consoleHeight": 322,      
+      "fontSize": 12,
+      "cursorBlink": true,
       "xtermTheme": {
         "background": "#000000",
         "foreground": "#0aff0a",
@@ -77,6 +87,8 @@
       "startY": 200,
       "consoleWidth": 481,
       "consoleHeight": 377,      
+      "fontSize": 12,
+      "cursorBlink": true,
       "xtermTheme": {
         "background": "#000000",
         "foreground": "#0aff0a",
@@ -91,6 +103,8 @@
       "startY": 207,
       "consoleWidth": 490,
       "consoleHeight": 370,      
+      "fontSize": 12,
+      "cursorBlink": true,
       "xtermTheme": {
         "background": "#000000",
         "foreground": "#0aff0a",

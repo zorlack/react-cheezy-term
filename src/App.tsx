@@ -10,17 +10,19 @@ const config = {
   startY: 200,
   consoleWidth: 463,
   consoleHeight: 370,
+  cursorBlink: true,
+  fontSize: 10,
   xtermTheme: {
     background: '#000000',
     foreground: '#0aff0a',
-    cursor: '#00ff00'
+    cursor: '#00ff00',
+    scrollbars: 'none'
   }
 };
 
 export default function App() {
   // Create a ref to the ReactCheezyTerm
   const cheezyRef = useRef<ReactCheezyTermRef>(null);
-  const cheezyRefb = useRef<ReactCheezyTermRef>(null);
 
   useEffect(() => {
     // When the component has mounted, we can access the Terminal
@@ -29,19 +31,11 @@ export default function App() {
       // Write something silly to the terminal
       terminal.write('Welcome to the Cheezy Terminal!\r\n');
     }
-
-    const terminalb = cheezyRefb.current?.getTerminal();
-    if (terminalb) {
-      // Write something silly to the terminal
-      terminalb.write('This is stupid...!\r\n');
-    }
   }, []);
 
   return (
     <div>
-      <h1>Cheezy Terminal Example</h1>
       <ReactCheezyTerm ref={cheezyRef} terminalConfig={config} />
-      <ReactCheezyTerm ref={cheezyRefb} terminalConfig={config} />
     </div>
   );
 }

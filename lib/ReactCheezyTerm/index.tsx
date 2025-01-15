@@ -7,11 +7,11 @@ import React, {
 import { Terminal } from '@xterm/xterm';
 import { FitAddon } from '@xterm/addon-fit';
 import '@xterm/xterm/css/xterm.css';  
-import _styles from './styles.module.css'
+import './styles.css';
 export interface XtermTheme {
   background: string;
   foreground: string;
-  cursor: string;
+  cursor: string;  
 }
 
 export interface TerminalConfig {
@@ -22,6 +22,8 @@ export interface TerminalConfig {
   startY: number;
   consoleWidth: number;
   consoleHeight: number;
+  fontSize: number;
+  cursorBlink: boolean;
   xtermTheme: XtermTheme;
 }
 
@@ -54,21 +56,15 @@ export const ReactCheezyTerm = forwardRef<ReactCheezyTermRef, ReactCheezyTermPro
       useImperativeHandle(ref, () => ({
         getTerminal: () => xtermRef.current
       }));
-
-      const defaultTheme = {
-        background: '#000000',
-        foreground: '#00ff00',
-        cursor: '#00ff00'
-      };
-    
-      const mergedTerminalConfig = terminalConfig
-        ? { ...defaultTheme, ...terminalConfig }
-        : defaultTheme;
-
+      
   
       useEffect(() => {
         const terminal = new Terminal({
-          theme: mergedTerminalConfig
+          theme: terminalConfig.xtermTheme,
+          scrollback: 0,
+          cursorBlink: terminalConfig.cursorBlink,
+          disableStdin: true,
+          fontSize: terminalConfig.fontSize
         });
 
         const fitAddon = new FitAddon();
@@ -111,12 +107,11 @@ export const ReactCheezyTerm = forwardRef<ReactCheezyTermRef, ReactCheezyTermPro
         top: `${startY}px`,
         width: `${consoleWidth}px`,
         height: `${consoleHeight}px`,
-        backgroundColor: 'black',
         overflow: 'hidden'
       };
   
       return (
-        <div style={wrapperStyle} className='cheezyterm'>
+        <div style={wrapperStyle} className="cheezyterm">
           <div ref={xtermContainerRef} style={xtermStyle} />
         </div>
       );
