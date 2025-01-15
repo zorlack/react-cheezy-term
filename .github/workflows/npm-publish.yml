@@ -33,11 +33,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
-      # Store the version, stripping any v-prefix
-      - name: Write release version
-        run: |
-          TAG=${{ github.event.release.tag_name }}
-          echo "VERSION=${TAG:1}" >> $GITHUB_ENV
       - run: npm pack
       # Upload the tarball to the release
       - name: Upload Release Asset
@@ -46,8 +41,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./react-cheezy-term-${VERSION}.tgz
-          asset_name: react-cheezy-term.media-${VERSION}.tgz
+          asset_path: ./react-cheezy-term-${{github.event.release.tag_name.replace('v', '')}}.tgz
+          asset_name: react-cheezy-term.media-${{github.event.release.tag_name.replace('v', '')}}.tgz
           asset_content_type: application/gzip
 
 
