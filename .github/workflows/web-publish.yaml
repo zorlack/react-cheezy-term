@@ -37,7 +37,9 @@ jobs:
       - run: npm run build
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-
+      - run: find
+        with:
+          path: dist/
       - name: Upload static files as artifact
         id: deployment
         uses: actions/upload-pages-artifact@v3
