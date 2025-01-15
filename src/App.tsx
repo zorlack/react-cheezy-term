@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react';
 import { ReactCheezyTerm, ReactCheezyTermRef} from 'react-cheezy-term/dist/ReactCheezyTerm'; //Note: npm defect
 
 const config = {
-  imagePath: 'react-cheezy-term/rectoset.png',
+  imagePath: `./react-cheezy-term/rectoset.png`,
   wrapperWidth: 1216,
   wrapperHeight: 832,
   startX: 283,
