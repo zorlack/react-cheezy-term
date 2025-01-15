@@ -30,7 +30,7 @@ jobs:
       - run: npm ci
 
       - run: curl -o public/media.tar.gz -L https://github.com/zorlack/react-cheezy-term/releases/download/v0.0.23/react-cheezy-term-media-0.0.23.tar.gz    
-      - run: tar -x -v -z -f media.tar.gz .
+      - run: tar -zxvf media.tar.gz 
         working-directory: ./public
       - run: rm -rf media.tar.gz
         working-directory: ./public
