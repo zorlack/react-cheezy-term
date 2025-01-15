@@ -34,7 +34,7 @@ public
 
 ```
 import { useRef, useEffect } from 'react';
-import { ReactCheezyTerm, ReactCheezyTermRef } from 'ReactCheezyTerm';
+import { ReactCheezyTerm, ReactCheezyTermRef} from 'react-cheezy-term/dist/ReactCheezyTerm'; //Note: npm defect
 
 const config = {
   imagePath: 'react-cheezy-term/rectoset.png',
