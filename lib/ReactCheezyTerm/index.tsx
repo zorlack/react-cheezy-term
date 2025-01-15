@@ -116,7 +116,7 @@ export const ReactCheezyTerm = forwardRef<ReactCheezyTermRef, ReactCheezyTermPro
       };
   
       return (
-        <div style={wrapperStyle}>
+        <div style={wrapperStyle} className='cheezyterm'>
           <div ref={xtermContainerRef} style={xtermStyle} />
         </div>
       );

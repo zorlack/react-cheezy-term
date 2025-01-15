@@ -1,15 +1,13 @@
+// App.test.tsx
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from './App';
 
 describe('App Component', () => {
-  it('should render a div with class "card"', () => {
-    // Render the App component
+  it('should render a div with class "cheezyterm"', () => {
     render(<App />);
-
-    // Query the div by its class
-    const cardDiv = document.querySelector('.card');
+    const cardDiv = document.querySelector('.cheezyterm');
     expect(cardDiv).toBeInTheDocument();
-    expect(cardDiv).toHaveClass('card');
+    expect(cardDiv).toHaveClass('cheezyterm');
   });
 });
