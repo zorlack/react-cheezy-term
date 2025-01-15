@@ -29,7 +29,8 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci
 
-      - run: curl -o public/media.tar.gz -v -L https://github.com/zorlack/react-cheezy-term/releases/download/v0.0.23/react-cheezy-term-media-0.0.23.tar.gz    
+      - run: curl -o public/media.tar.gz -L https://github.com/zorlack/react-cheezy-term/releases/download/v0.0.23/react-cheezy-term-media-0.0.23.tar.gz    
+      - run: find public
       - run: cd public
       - run: tar -zxvf media.tar.gz .
       - run: rm -rf media.tar.gz
