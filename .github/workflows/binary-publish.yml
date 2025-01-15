@@ -1,0 +1,33 @@
+name: Package and Release React Cheezy Term Media
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  package-and-release:
+    name: Package and Attach Binary
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Compress the content of ./public/react-cheezy-term
+      - name: Create Tarball
+        run: |
+          version="${{ github.event.release.tag_name }}"
+          mkdir -p artifacts
+          tar -czf "artifacts/react-cheezy-term.media.${version}.tar.gz" -C ./public react-cheezy-term
+
+      # Upload the tarball to the release
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./artifacts/react-cheezy-term.media.${{ github.event.release.tag_name }}.tar.gz
+          asset_name: react-cheezy-term.media.${{ github.event.release.tag_name }}.tar.gz
+          asset_content_type: application/gzip
