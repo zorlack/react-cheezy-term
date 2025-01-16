@@ -1,2 +1,4 @@
 import { ReactCheezyTerm } from "./ReactCheezyTerm";
-export default {ReactCheezyTerm};
+import { TerminalPresetPicker } from "./TerminalPresetPicker";
+
+export { ReactCheezyTerm, TerminalPresetPicker };

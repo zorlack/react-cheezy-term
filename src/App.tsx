@@ -1,5 +1,6 @@
-import { useRef, useEffect } from 'react';
-import { ReactCheezyTerm, ReactCheezyTermRef } from '../lib/ReactCheezyTerm';
+import { useRef, useEffect, useState } from 'react';
+import { ReactCheezyTerm, ReactCheezyTermRef, TerminalConfig, TerminalPresetPicker } from '../lib/ReactCheezyTerm';
+
 import "./App.css";
 
 const config = {
@@ -20,6 +21,13 @@ const config = {
   }
 };
 
+
+const [selectedConfig, setSelectedConfig] = useState<TerminalConfig | null>(null);
+const handlePresetChange = (config: TerminalConfig) => {
+  setSelectedConfig(config);
+  console.log('Selected Terminal Config:', config);
+};
+
 export default function App() {
   // Create a ref to the ReactCheezyTerm
   const cheezyRef = useRef<ReactCheezyTermRef>(null);
@@ -36,6 +44,8 @@ export default function App() {
   return (
     <div>
       <ReactCheezyTerm ref={cheezyRef} terminalConfig={config} />
+      
+      <TerminalPresetPicker onPresetChange={handlePresetChange} />
     </div>
   );
 }
