@@ -18,35 +18,26 @@ const defaultConfig: TerminalConfig = {
   xtermTheme: {
     background: '#000000',
     foreground: '#0aff0a',
-    cursor: '#00ff00',
-    scrollbars: 'none',
+    cursor: '#00ff00'
   },
 };
 
 export default function App() {
-  // State to manage the terminal configuration
   const [terminalConfig, setTerminalConfig] = useState<TerminalConfig>(defaultConfig);
-
-  // Create a ref to the ReactCheezyTerm
   const cheezyRef = useRef<ReactCheezyTermRef>(null);
 
   useEffect(() => {
-    // When the component has mounted, we can access the Terminal
     const terminal = cheezyRef.current?.getTerminal();
     if (terminal) {
-      // Write something to the terminal
       terminal.write('Welcome to the Cheezy Terminal!\r\n');
     }
   }, []);
 
-  // Handle preset change from TerminalPresetPicker
   const handlePresetChange = (config: TerminalConfig) => {
-    console.log('Selected Terminal Config:', config);
+    setTerminalConfig((prevConfig) =>
+      JSON.stringify(prevConfig) === JSON.stringify(config) ? prevConfig : config
+    );
 
-    // Update the terminal configuration state
-    setTerminalConfig(config);
-
-    // Optionally, update the terminal content directly if necessary
     const terminal = cheezyRef.current?.getTerminal();
     if (terminal) {
       terminal.clear();
@@ -61,3 +52,4 @@ export default function App() {
     </div>
   );
 }
+
