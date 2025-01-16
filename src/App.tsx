@@ -9,6 +9,8 @@ const config = {
   startY: 200,
   consoleWidth: 463,
   consoleHeight: 370,
+  fontSize: 10,
+  cursorBlink: false,
   xtermTheme: {
     background: '#000000',
     foreground: '#0aff0a',
