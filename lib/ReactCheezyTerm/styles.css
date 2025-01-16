@@ -1,0 +1,12 @@
+div.cheezyterm {
+    padding: 0px;
+}
+
+.cheezyterm { 
+    /*border: 1px solid red;*/
+}
+
+/* styles.module.css */
+.cheezyterm .xterm .xterm-viewport {
+    overflow-y: hidden;
+}
