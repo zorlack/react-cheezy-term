@@ -1,6 +1,6 @@
 {
     "spaceconsole": {
-      "imagePath": "spaceconsole.png",
+      "imagePath": "react-cheezy-term/spaceconsole.png",
       "wrapperWidth": 1216,
       "wrapperHeight": 832,
       "startX": 359,
@@ -16,7 +16,7 @@
       }
     },
     "rectoset": {
-      "imagePath": "rectoset.png",
+      "imagePath": "react-cheezy-term/rectoset.png",
       "wrapperWidth": 1216,
       "wrapperHeight": 832,
       "startX": 283,
@@ -32,7 +32,7 @@
       }
     },
     "lunchbox": {
-      "imagePath": "lunchbox.png",
+      "imagePath": "react-cheezy-term/lunchbox.png",
       "wrapperWidth": 1216,
       "wrapperHeight": 832,
       "startX": 361,
@@ -48,7 +48,7 @@
       }
     },
     "bananaterm": {
-      "imagePath": "bananaterm.png",
+      "imagePath": "react-cheezy-term/bananaterm.png",
       "wrapperWidth": 1216,
       "wrapperHeight": 832,
       "startX": 263,
@@ -64,7 +64,7 @@
       }
     },
     "plastitop": {
-      "imagePath": "plastitop.png",
+      "imagePath": "react-cheezy-term/plastitop.png",
       "wrapperWidth": 1216,
       "wrapperHeight": 832,
       "startX": 302,
@@ -80,7 +80,7 @@
       }
     },
     "grayset": {
-      "imagePath": "grayset.png",
+      "imagePath": "react-cheezy-term/grayset.png",
       "wrapperWidth": 1216,
       "wrapperHeight": 832,
       "startX": 337,
@@ -96,7 +96,7 @@
       }
     },
     "cube": {
-      "imagePath": "cube.png",
+      "imagePath": "react-cheezy-term/cube.png",
       "wrapperWidth": 1216,
       "wrapperHeight": 832,
       "startX": 358,

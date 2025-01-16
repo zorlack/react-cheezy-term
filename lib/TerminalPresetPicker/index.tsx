@@ -21,12 +21,12 @@ export const TerminalPresetPicker: React.FC<TerminalPresetPickerProps> = ({ onPr
         }
         const data = await response.json();
         setPresetOptions(data);
-
+  
         // Set the default selection (first key in the presets object)
         const defaultPreset = Object.keys(data)[0];
         if (defaultPreset) {
           setSelectedPreset(defaultPreset);
-          onPresetChange(data[defaultPreset]);
+          onPresetChange(data[defaultPreset]); // Notify parent only once
         }
       } catch (err: any) {
         setError(err.message || 'An unknown error occurred');
@@ -34,9 +34,10 @@ export const TerminalPresetPicker: React.FC<TerminalPresetPickerProps> = ({ onPr
         setLoading(false);
       }
     };
-
-    fetchPresets();
-  }, [onPresetChange]);
+    
+      fetchPresets();
+      // Empty dependency array ensures this runs only once
+    }, []); // <-- No dependencies here
 
   // Handle selection change
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
