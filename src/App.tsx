@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import { ReactCheezyTerm, ReactCheezyTermRef} from 'react-cheezy-term/dist/ReactCheezyTerm'; //Note: npm defect
+import { ReactCheezyTerm, ReactCheezyTermRef } from 'react-cheezy-term/dist/ReactCheezyTerm'; // Note: npm defect
 
 const config = {
   imagePath: `./react-cheezy-term/rectoset.png`,
@@ -19,16 +19,51 @@ const config = {
 };
 
 export default function App() {
-  // Create a ref to the ReactCheezyTerm
   const cheezyRef = useRef<ReactCheezyTermRef>(null);
 
   useEffect(() => {
-    // When the component has mounted, we can access the Terminal
-    const terminal = cheezyRef.current?.getTerminal();
-    if (terminal) {
-      // Write something silly to the terminal
-      terminal.write('Welcome to the Cheezy Terminal!\r\n');
-    }
+    let stopLoop = false; // Control the loop
+    let fileContent = ''; // Store the full content of the file
+
+    const fetchContent = async () => {
+      const response = await fetch('./fire.terminal.txt');
+      if (!response.ok) {
+        console.error('Failed to load the file');
+        return;
+      }
+      const text = await response.text();
+      fileContent = text; // Store the content in memory
+    };
+
+    const writeToTerminal = async (content: string) => {
+      const terminal = cheezyRef.current?.getTerminal();
+      if (!terminal) {
+        console.error('Terminal not initialized.');
+        return;
+      }
+
+      while (!stopLoop) {
+        terminal.clear(); // Clear the terminal for a fresh start
+        for (const chunk of content.split('\n')) {
+          terminal.write(chunk + '\n'); // Write each line to the terminal
+          await new Promise((resolve) => setTimeout(resolve, 50)); // Simulate streaming delay
+        }
+        await new Promise((resolve) => setTimeout(resolve, 1)); // Delay before looping again
+      }
+    };
+
+    const initialize = async () => {
+      await fetchContent(); // Fetch the file content
+      if (fileContent) {
+        writeToTerminal(fileContent); // Start writing to the terminal in a loop
+      }
+    };
+
+    initialize();
+
+    return () => {
+      stopLoop = true; // Cleanup the loop on unmount
+    };
   }, []);
 
   return (
